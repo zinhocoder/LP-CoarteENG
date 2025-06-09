@@ -1,10 +1,24 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
-import { Building, ClipboardCheck, Home, Search, Phone, Mail, BookOpen, Users, Target } from "lucide-react"
+import {
+  Building,
+  ClipboardCheck,
+  Home,
+  Search,
+  Phone,
+  Mail,
+  BookOpen,
+  Users,
+  Target,
+  CheckCircle,
+  Clock,
+  Award,
+  Shield,
+} from "lucide-react"
 
 const WHATSAPP_LINK =
-  "https://wa.me/5516996042857?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20da%20Coarte%20Engenharia."
+  "https://wa.me/5516996042857?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20da%20Coart%20Engenharia."
 
 const WhatsAppFloatingButton = () => {
   return (
@@ -27,28 +41,25 @@ export default function CoarteLandingPage() {
     {
       icon: <Home className="h-8 w-8 md:h-10 md:w-10 text-amber-400" />,
       title: "Avaliação de Imóveis",
-      description:
-        "Laudo técnico que determina o valor de mercado de casas, apartamentos ou terrenos, conforme normas da ABNT.",
+      description: "Determinação precisa do valor de mercado conforme normas ABNT.",
       id: "servico-avaliacao-detalhe",
     },
     {
       icon: <Building className="h-8 w-8 md:h-10 md:w-10 text-amber-400" />,
       title: "Laudo Estrutural",
-      description:
-        "Avalia a segurança e integridade das estruturas do imóvel, identificando problemas e recomendando soluções.",
+      description: "Análise da segurança e integridade estrutural do imóvel.",
       id: "servico-laudo-detalhe",
     },
     {
       icon: <ClipboardCheck className="h-8 w-8 md:h-10 md:w-10 text-amber-400" />,
       title: "Vistoria Técnica",
-      description:
-        "Inspeção detalhada para registrar o estado de conservação do imóvel, identificando danos e anomalias.",
+      description: "Inspeção detalhada do estado de conservação do imóvel.",
       id: "servico-vistoria-tecnica-detalhe",
     },
     {
       icon: <Search className="h-8 w-8 md:h-10 md:w-10 text-amber-400" />,
       title: "Vistoria em Apartamento Novo",
-      description: "Avaliação minuciosa antes da entrega das chaves, verificando conformidade com projeto e normas.",
+      description: "Verificação de conformidade antes da entrega das chaves.",
       id: "servico-vistoria-apto-novo-detalhe",
     },
   ]
@@ -60,9 +71,9 @@ export default function CoarteLandingPage() {
       title: "Avaliação de Imóveis",
       subtitle: "Precisa e Confiável",
       fullDescription:
-        "Nosso serviço de avaliação de imóveis fornece um laudo técnico detalhado, determinando o valor de mercado justo para casas, apartamentos, terrenos e outros tipos de propriedades. Seguimos rigorosamente as normas da ABNT, considerando fatores cruciais como localização privilegiada, padrão construtivo, estado de conservação atual e uma análise comparativa de mercado aprofundada. Este laudo é indispensável para processos de compra e venda, inventários, partilhas amigáveis ou judiciais, financiamentos, garantias, processos judiciais diversos e para a simples atualização patrimonial. Com a Coarte, você garante segurança, transparência e embasamento técnico para todas as partes envolvidas na negociação.",
-      imageSrc: "/placeholder.svg?width=500&height=400",
-      imageAlt: "Engenheiro analisando planta de imóvel para avaliação",
+        "Laudo técnico detalhado que determina o valor de mercado justo para imóveis. Seguimos rigorosamente as normas ABNT, considerando localização, padrão construtivo, estado de conservação e análise comparativa de mercado. Essencial para compra, venda, inventários, financiamentos e processos judiciais.",
+      imageSrc: "/avaliacaoimovel.png",
+      imageAlt: "Engenheiro da Coart com prancheta de avaliação de imóveis",
       ctaText: "Solicitar Avaliação via WhatsApp",
       layout: "imageLeft",
     },
@@ -72,9 +83,9 @@ export default function CoarteLandingPage() {
       title: "Laudo Estrutural",
       subtitle: "Segurança e Integridade",
       fullDescription:
-        "O laudo estrutural é um documento técnico essencial, elaborado por nossos engenheiros civis especializados, focado em avaliar a segurança e a integridade das estruturas de um imóvel. Identificamos potenciais problemas como rachaduras, fissuras, deformações, corrosão de armaduras ou qualquer outra patologia estrutural. O laudo inclui um diagnóstico preciso e recomendações técnicas claras para correção, reforço ou prevenção, visando garantir a estabilidade e a durabilidade da edificação. É altamente indicado em casos de suspeita de danos estruturais, antes de grandes reformas, para compra de imóveis antigos ou quando exigido por órgãos públicos e fiscalizadores.",
-      imageSrc: "/placeholder.svg?width=500&height=400",
-      imageAlt: "Inspeção de estrutura de concreto para laudo estrutural",
+        "Documento técnico que avalia a segurança estrutural do imóvel. Identificamos problemas como rachaduras, fissuras, deformações e corrosão. Inclui diagnóstico preciso e recomendações para correção, garantindo a estabilidade da edificação.",
+      imageSrc: "/laudoestrutura.png",
+      imageAlt: "Engenheiro da Coart com laudo estrutural em frente a uma construção",
       ctaText: "Consultar Laudo Estrutural via WhatsApp",
       layout: "imageRight",
     },
@@ -84,9 +95,9 @@ export default function CoarteLandingPage() {
       title: "Vistoria Técnica",
       subtitle: "Registro Detalhado do Imóvel",
       fullDescription:
-        "Realizamos uma inspeção detalhada e criteriosa, conduzida por profissional habilitado, com o objetivo principal de registrar o estado de conservação atual do imóvel. Durante a vistoria, identificamos e documentamos danos existentes, anomalias construtivas, falhas de acabamento ou quaisquer não conformidades em relação às normas técnicas e boas práticas. O resultado é um relatório técnico robusto, enriquecido com registros fotográficos e descrições precisas, extremamente útil para processos de entrega e recebimento de obras, contratos de locação (vistoria de entrada e saída), acompanhamento de reformas ou como prova técnica em disputas judiciais.",
-      imageSrc: "/placeholder.svg?width=500&height=400",
-      imageAlt: "Engenheiro com prancheta realizando vistoria técnica em obra",
+        "Inspeção criteriosa para registrar o estado atual do imóvel. Documentamos danos, anomalias e não conformidades com registros fotográficos. Ideal para entrega de obras, contratos de locação e processos judiciais.",
+      imageSrc: "/vistoriatecnica.png",
+      imageAlt: "Engenheiro da Coart fotografando rachaduras durante vistoria técnica",
       ctaText: "Agendar Vistoria Técnica via WhatsApp",
       layout: "imageLeft",
     },
@@ -96,11 +107,34 @@ export default function CoarteLandingPage() {
       title: "Vistoria em Apartamento Novo",
       subtitle: "Garantia de Qualidade na Entrega",
       fullDescription:
-        "Este serviço consiste em uma avaliação minuciosa e técnica realizada antes do proprietário receber as chaves do apartamento novo. Verificamos se o imóvel foi entregue em conformidade com o projeto arquitetônico, memorial descritivo, especificações de materiais e todas as normas técnicas aplicáveis. A vistoria aponta eventuais vícios construtivos, falhas de acabamento, não conformidades em instalações elétricas e hidráulicas, ou itens pendentes de finalização pela construtora. Este processo é essencial para garantir os direitos do consumidor, facilitar as tratativas com a construtora para correções e assegurar que o apartamento esteja em perfeitas condições antes da aceitação definitiva.",
-      imageSrc: "/placeholder.svg?width=500&height=400",
-      imageAlt: "Inspeção de apartamento novo com checklist",
+        "Avaliação técnica antes do recebimento das chaves. Verificamos conformidade com projeto, especificações e normas técnicas. Identificamos vícios construtivos e itens pendentes, garantindo seus direitos como consumidor.",
+      imageSrc: "/vistoriapnovo.png",
+      imageAlt: "Engenheiro da Coart realizando vistoria em apartamento novo",
       ctaText: "Solicitar Vistoria de Apto Novo via WhatsApp",
       layout: "imageRight",
+    },
+  ]
+
+  const whyChooseUs = [
+    {
+      icon: <CheckCircle className="h-10 w-10 text-amber-400" />,
+      title: "Expertise Técnica",
+      description: "Equipe de engenheiros altamente qualificados com ampla experiência em engenharia diagnóstica.",
+    },
+    {
+      icon: <Clock className="h-10 w-10 text-amber-400" />,
+      title: "Agilidade",
+      description: "Laudos e vistorias entregues dentro do prazo, com rapidez e sem comprometer a qualidade.",
+    },
+    {
+      icon: <Award className="h-10 w-10 text-amber-400" />,
+      title: "Credibilidade",
+      description: "Documentos com validade jurídica e técnica, elaborados conforme as normas ABNT.",
+    },
+    {
+      icon: <Shield className="h-10 w-10 text-amber-400" />,
+      title: "Segurança",
+      description: "Proteção para seu investimento com análises precisas e recomendações fundamentadas.",
     },
   ]
 
@@ -114,10 +148,10 @@ export default function CoarteLandingPage() {
             <div className="mb-6 md:mb-8 flex justify-center">
               <Image
                 src="/logo-coart.png"
-                alt="Coarte Engenharia Civil Logo"
+                alt="Coart Engenharia Civil Logo"
                 width={240}
                 height={80}
-                className="object-contain md:w-[280px] md:h-[90px]"
+                className="object-contain md:w-[280px] md:h-[150px]"
                 priority
               />
             </div>
@@ -127,7 +161,7 @@ export default function CoarteLandingPage() {
               <span className="text-amber-400">Segurança e Valor para Seu Patrimônio.</span>
             </h1>
             <p className="mt-4 md:mt-6 max-w-3xl mx-auto text-base md:text-lg lg:text-xl text-gray-300 px-2">
-              Na Coarte Engenharia Civil, transformamos desafios em soluções sólidas. Oferecemos expertise técnica e
+              Na Coart Engenharia Civil, transformamos desafios em soluções sólidas. Oferecemos expertise técnica e
               compromisso com a qualidade em cada projeto, garantindo a integridade e a valorização do seu investimento.
             </p>
             <div className="mt-8 md:mt-10 flex flex-col sm:flex-row justify-center gap-3 md:gap-4 px-4">
@@ -160,8 +194,8 @@ export default function CoarteLandingPage() {
                 Nossa História: <span className="text-amber-400">Paixão por Construir o Futuro</span>
               </h2>
               <p className="mt-3 md:mt-4 max-w-3xl mx-auto text-base md:text-lg text-gray-300 px-2">
-                Conheça a trajetória da Coarte Engenharia Civil, moldada pela dedicação à excelência e ao compromisso
-                com nossos clientes.
+                Conheça a trajetória da Coart Engenharia Civil, moldada pela dedicação à excelência e ao compromisso com
+                nossos clientes.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -173,10 +207,9 @@ export default function CoarteLandingPage() {
                   <div>
                     <h3 className="text-lg md:text-xl font-semibold text-amber-400">A Fundação</h3>
                     <p className="text-gray-300 mt-1 text-sm md:text-base leading-relaxed">
-                      A Coarte Engenharia Civil nasceu do sonho de transformar o conhecimento técnico em soluções
-                      práticas e seguras para o setor da construção. Fundada por engenheiros apaixonados pela precisão e
-                      pela inovação, nossa jornada começou com o objetivo claro de oferecer serviços de diagnóstico que
-                      realmente fizessem a diferença na vida e nos investimentos de nossos clientes.
+                      A Coart Engenharia Civil nasceu do sonho de transformar conhecimento técnico em soluções práticas
+                      e seguras. Fundada por engenheiros apaixonados pela precisão, nossa jornada começou com o objetivo
+                      de oferecer serviços de diagnóstico que realmente fizessem a diferença.
                     </p>
                   </div>
                 </div>
@@ -187,10 +220,9 @@ export default function CoarteLandingPage() {
                   <div>
                     <h3 className="text-lg md:text-xl font-semibold text-amber-400">Nossa Missão e Valores</h3>
                     <p className="text-gray-300 mt-1 text-sm md:text-base leading-relaxed">
-                      Nossa missão é garantir a segurança, a conformidade e a valorização de imóveis através de laudos e
-                      vistorias técnicas de alta precisão. Atuamos com integridade, transparência e um compromisso
-                      inabalável com a qualidade. Cada projeto é tratado com a máxima atenção, buscando sempre superar
-                      as expectativas e construir relações de confiança duradouras.
+                      Garantir segurança, conformidade e valorização de imóveis através de laudos técnicos precisos.
+                      Atuamos com integridade, transparência e compromisso inabalável com a qualidade, construindo
+                      relações de confiança duradouras.
                     </p>
                   </div>
                 </div>
@@ -201,21 +233,19 @@ export default function CoarteLandingPage() {
                   <div>
                     <h3 className="text-lg md:text-xl font-semibold text-amber-400">Visão de Futuro</h3>
                     <p className="text-gray-300 mt-1 text-sm md:text-base leading-relaxed">
-                      Olhamos para o futuro com o objetivo de sermos referência em engenharia diagnóstica, expandindo
-                      nossa atuação e incorporando as mais recentes tecnologias e metodologias. Queremos continuar
-                      contribuindo para um mercado imobiliário mais seguro, transparente e eficiente, sempre ao lado de
-                      nossos clientes em cada etapa de seus projetos.
+                      Ser referência em engenharia diagnóstica, incorporando tecnologias avançadas e contribuindo para
+                      um mercado imobiliário mais seguro e transparente, sempre ao lado de nossos clientes.
                     </p>
                   </div>
                 </div>
               </div>
               <div className="flex justify-center items-center order-1 md:order-2">
                 <Image
-                  src="/placeholder.svg?width=500&height=500"
-                  alt="Equipe Coarte Engenharia Civil em planejamento"
+                  src="/escritorio.png?width=500&height=500"
+                  alt="Equipe Coart Engenharia Civil em planejamento"
                   width={400}
                   height={400}
-                  className="rounded-lg shadow-2xl object-cover aspect-square md:w-[500px] md:h-[500px]"
+                  className="rounded-lg shadow-2xl object-cover aspect-square md:w-[500px] md:h-[650px]"
                 />
               </div>
             </div>
@@ -271,9 +301,9 @@ export default function CoarteLandingPage() {
                   <Image
                     src={service.imageSrc || "/placeholder.svg"}
                     alt={service.imageAlt}
-                    width={400}
-                    height={320}
-                    className="rounded-lg shadow-2xl object-cover w-full max-w-md md:max-w-none md:w-[500px] md:h-[400px]"
+                    width={500}
+                    height={500}
+                    className="rounded-lg shadow-2xl object-cover w-full max-w-md md:max-w-none md:w-[500px] md:h-[500px]"
                   />
                 </div>
                 <div className={`order-2 ${service.layout === "imageLeft" ? "md:order-2" : "md:order-1"}`}>
@@ -296,6 +326,47 @@ export default function CoarteLandingPage() {
             </div>
           </section>
         ))}
+
+        {/* Why Choose Us Section */}
+        <section id="why-choose-us" className="py-12 md:py-16 lg:py-24 bg-gray-950">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center mb-8 md:mb-12 lg:mb-16">
+              <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl px-2">
+                Por que escolher a <span className="text-amber-400">Coart Engenharia?</span>
+              </h2>
+              <p className="mt-3 md:mt-4 max-w-2xl mx-auto text-base md:text-lg text-gray-300 px-2">
+                Nosso compromisso é oferecer serviços de excelência que garantam tranquilidade e segurança para nossos
+                clientes.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+              {whyChooseUs.map((item, index) => (
+                <Card key={index} className="bg-gray-900 border-gray-800 text-gray-200 shadow-lg h-full">
+                  <CardHeader className="flex flex-col items-center text-center gap-2 md:gap-3 pb-3 md:pb-4 pt-6">
+                    <div className="bg-gray-800 p-3 md:p-4 rounded-full">{item.icon}</div>
+                    <CardTitle className="text-lg md:text-xl font-semibold text-amber-400 leading-tight">
+                      {item.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center px-3 md:px-6 pb-6">
+                    <p className="text-gray-300 text-sm md:text-base leading-relaxed">{item.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <div className="mt-10 md:mt-12 text-center">
+              <Button
+                asChild
+                size="lg"
+                className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 py-3 md:px-10 text-base md:text-lg"
+              >
+                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                  Solicite um Orçamento
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
 
         {/* Call to Action Section */}
         <section id="contact" className="py-12 md:py-16 lg:py-24 bg-gradient-to-b from-black via-gray-900 to-black">
@@ -323,10 +394,10 @@ export default function CoarteLandingPage() {
                 <div className="flex items-center justify-center md:justify-start gap-3">
                   <Mail className="h-5 w-5 md:h-6 md:w-6 text-amber-400" />
                   <a
-                    href="mailto:contato@coarteengenharia.com.br"
+                    href="mailto:contato@coartengenharia.com.br"
                     className="text-gray-300 hover:text-amber-400 text-sm md:text-base break-all"
                   >
-                    contato@coarteengenharia.com.br
+                    contato@coartengenharia.com.br
                   </a>
                 </div>
                 <div className="flex items-center justify-center md:justify-start gap-3">
@@ -344,15 +415,15 @@ export default function CoarteLandingPage() {
           <div className="flex items-center">
             <Image
               src="/logo-coart.png"
-              alt="Coarte Engenharia Civil Logo"
+              alt="Coart Engenharia Civil Logo"
               width={120}
               height={40}
-              className="object-contain md:w-[150px] md:h-[50px]"
+              className="object-contain md:w-[150px] md:h-[80px]"
             />
           </div>
           <div className="text-center md:text-left">
             <p className="text-xs md:text-sm text-gray-400">
-              &copy; {new Date().getFullYear()} Coarte Engenharia Civil. Todos os direitos reservados.
+              &copy; {new Date().getFullYear()} Coart Engenharia Civil. Todos os direitos reservados.
             </p>
             <p className="text-xs text-gray-500 mt-1">Soluções Inteligentes para Construções Seguras.</p>
           </div>
